@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class chaser : MonoBehaviour
 {
-    private float speed = 4;
+    public float speed = 4;
     private float max_dist = 15;
     private float min_dist = 1;
     // public Transform Player;

@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 739359177011280852}
   - component: {fileID: 739359177011280853}
   - component: {fileID: 739359177011280851}
-  - component: {fileID: 8461967572986734051}
   - component: {fileID: 4277151535609863268}
   m_Layer: 0
   m_Name: enemy high
@@ -135,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a4e97fcb03b6e4faa4b6de8d5fe567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 4
 --- !u!61 &739359177011280852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194,20 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67eb660c61324834fb1dbe5d45a7e44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
   gun: {fileID: 8461967573487004004}
---- !u!114 &8461967572986734051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739359177011280858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795c917ff508301498333d593620502d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 4
 --- !u!114 &4277151535609863268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +224,7 @@ GameObject:
   - component: {fileID: 8461967573487004315}
   - component: {fileID: 8461967573487004314}
   - component: {fileID: 8461967573487004005}
+  - component: {fileID: 1205060479}
   m_Layer: 0
   m_Name: gun
   m_TagString: Untagged
@@ -343,7 +332,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8461967573487004004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b5bca06ed4c9c64cabde58f5f35e34a, type: 3}
   m_Name: 
@@ -351,3 +340,20 @@ MonoBehaviour:
   moveSpeed: 3
   bulletPrefab: {fileID: 1906482094160718508, guid: 37ef05bee8d6730479b5b20ea32f6ef9, type: 3}
   shootPoint: {fileID: 2144527411}
+--- !u!114 &1205060479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461967573487004004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fec12eb8c1989a4bad27ff98d442973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 1906482094160718508, guid: 37ef05bee8d6730479b5b20ea32f6ef9, type: 3}
+  - {fileID: 4077177551348568828, guid: 434f873dad232ea40b46da518346539a, type: 3}
+  shootPoint: {fileID: 2144527411}
+  moveSpeed: 20

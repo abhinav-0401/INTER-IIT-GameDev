@@ -439,6 +439,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b62d4ac33a4d244b827d727630ed75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &314938567 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1833058596, guid: b60a3615a2d015f4e98293dae567e696, type: 3}
+  m_PrefabInstance: {fileID: 1607325130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &333173502
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,12 +603,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 739359177011280854, guid: e0b4db87a272dc341959c748c272a85c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 739359177011280858, guid: e0b4db87a272dc341959c748c272a85c, type: 3}
       propertyPath: m_Name
       value: Enemy High Level
       objectReference: {fileID: 0}
     - target: {fileID: 739359177011280858, guid: e0b4db87a272dc341959c748c272a85c, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461967572986734051, guid: e0b4db87a272dc341959c748c272a85c, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461967573487004005, guid: e0b4db87a272dc341959c748c272a85c, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -653,6 +670,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8911211224388110771, guid: 09b4147f62c4f83459a80ef9f3fc5f4a, type: 3}
   m_PrefabInstance: {fileID: 1233808727}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &403487466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403487465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b7076e7df6e6d4e8498906d7c08063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  health: 100
+  canTakeDamage: 1
+  speed: 22
+  infection: 0
 --- !u!1 &434447523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,7 +1972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &950265606
 Transform:
   m_ObjectHideFlags: 0
@@ -2263,6 +2297,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 331fbdbd30e579f49bc2d1c1651591a6, type: 3}
+--- !u!4 &1187001443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2144527411, guid: e0b4db87a272dc341959c748c272a85c, type: 3}
+  m_PrefabInstance: {fileID: 345200332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1205060474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8461967573487004004, guid: e0b4db87a272dc341959c748c272a85c, type: 3}
+  m_PrefabInstance: {fileID: 345200332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1205060479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205060474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fec12eb8c1989a4bad27ff98d442973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 1906482094160718508, guid: 37ef05bee8d6730479b5b20ea32f6ef9, type: 3}
+  - {fileID: 4077177551348568828, guid: 434f873dad232ea40b46da518346539a, type: 3}
+  shootPoint: {fileID: 1187001443}
+  moveSpeed: 20
 --- !u!1001 &1233808727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2273,6 +2334,10 @@ PrefabInstance:
     - target: {fileID: 8911211224388110771, guid: 09b4147f62c4f83459a80ef9f3fc5f4a, type: 3}
       propertyPath: m_Name
       value: TestPlayer 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8911211224388110771, guid: 09b4147f62c4f83459a80ef9f3fc5f4a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8911211224388110782, guid: 09b4147f62c4f83459a80ef9f3fc5f4a, type: 3}
       propertyPath: ActiveCharacter
@@ -2434,12 +2499,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289436772, guid: 394b50d30c166644992da3b59391ce1a, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9163780626389737014, guid: 394b50d30c166644992da3b59391ce1a, type: 3}
       propertyPath: m_Name
       value: Enemy Mid Level
       objectReference: {fileID: 0}
     - target: {fileID: 9163780626389737014, guid: 394b50d30c166644992da3b59391ce1a, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163780626389737018, guid: 394b50d30c166644992da3b59391ce1a, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9163780626389737020, guid: 394b50d30c166644992da3b59391ce1a, type: 3}
@@ -2958,6 +3031,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8118579965740844553, guid: b60a3615a2d015f4e98293dae567e696, type: 3}
   m_PrefabInstance: {fileID: 1607325130}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1595395658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181693378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b7076e7df6e6d4e8498906d7c08063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  health: 100
+  canTakeDamage: 1
+  speed: 22
+  infection: 0
 --- !u!1001 &1607325130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2965,6 +3055,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1595395653, guid: b60a3615a2d015f4e98293dae567e696, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 314938567}
     - target: {fileID: 1595395662, guid: b60a3615a2d015f4e98293dae567e696, type: 3}
       propertyPath: timeManager
       value: 
