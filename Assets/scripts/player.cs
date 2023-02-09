@@ -41,15 +41,15 @@ public class player : MonoBehaviour
 	{
         if(infection)
         {
-		if (Time.time > nextinfect&&totalinfect<3) {
-			health-=1f;
-            totalinfect+=1;
-			nextinfect = Time.time + infectRate;
-		}
-        if(totalinfect>=3){
-            infection=false;
-            totalinfect=0;
-        }
+            if (Time.time > nextinfect&&totalinfect<3) {
+                health-=1f;
+                totalinfect+=1;
+                nextinfect = Time.time + infectRate;
+            }
+            if(totalinfect>=3){
+                infection=false;
+                totalinfect=0;
+            }
 	}
     }
 }

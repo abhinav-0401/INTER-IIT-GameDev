@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4205557008459991892}
   - component: {fileID: 4205557008459991211}
   - component: {fileID: 4205557008459991210}
+  - component: {fileID: 3307279953160921466}
   m_Layer: 0
   m_Name: enemy low
   m_TagString: enemy
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4205557008459991888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.53, y: 3.45, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a4e97fcb03b6e4faa4b6de8d5fe567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 8136352471494298345, guid: fd96dfef1fcaa4f43bb0c8bc4494910e, type: 3}
 --- !u!114 &4205557008459991892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,3 +161,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3307279953160921466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4205557008459991888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f15ba0845f6404faedb6a285a9d1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LowLevelHealth: 10
+  MidLevelHealth: 20
+  HighLevelHealth: 30
+  EnemyHealth: 0

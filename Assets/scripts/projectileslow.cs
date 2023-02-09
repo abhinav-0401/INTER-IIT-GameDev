@@ -18,11 +18,7 @@ public class projectileslow : MonoBehaviour
 	{
         if (col.gameObject.tag == "Player")	
         {
-        // col.gameObject.GetComponent<player>().speed=1f;       
-        // print(col.gameObject.GetComponent<player>().speed);
-        // StartCoroutine(slow());		
-        // col.gameObject.GetComponent<player>().speed=22f;  
-        // print(col.gameObject.GetComponent<player>().speed);
+        
         Destroy(gameObject);  
         }    
         }

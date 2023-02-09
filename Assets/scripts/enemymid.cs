@@ -11,10 +11,14 @@ public class enemymid : MonoBehaviour
     public GameObject gun;
      void Update()
     {
-        Transform Player=GameObject.FindGameObjectWithTag("Player").transform;
+        
+        Transform Player=GameObject.FindGameObjectWithTag("Player 1").transform;
+        if(!Player){
+            return;
+        }
         Vector3 difference = Player.position - gun.transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        gun.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+        // gun.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
 
     }
 }
