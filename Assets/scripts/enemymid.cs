@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemymid : MonoBehaviour
 {
     bool canTakeDamage = true;
-    private float health = 10;
+    public float health = 10;
     private float min_dist = 8;
     // public Transform Player;
     public GameObject gun;

@@ -29,6 +29,8 @@ public class UI_Manager : MonoBehaviour
     }
     public void PlayGame(){
         SceneManager.LoadScene("Play Scene");
+        Character_Health.instance.character_health_1 = 100f;
+        Character_Health.instance.character_health_2 = 100f;
     }
     public void Quit(){
         Debug.Log("App is closed");

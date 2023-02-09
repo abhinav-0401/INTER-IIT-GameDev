@@ -172,7 +172,6 @@ GameObject:
   - component: {fileID: 9163780626389737016}
   - component: {fileID: 9163780626389737017}
   - component: {fileID: 9163780626389737023}
-  - component: {fileID: 1289436772}
   - component: {fileID: 5758035553477700178}
   m_Layer: 0
   m_Name: enemy mid
@@ -262,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a4e97fcb03b6e4faa4b6de8d5fe567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 4
 --- !u!61 &9163780626389737016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -321,20 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67eb660c61324834fb1dbe5d45a7e44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
   gun: {fileID: 1041884031}
---- !u!114 &1289436772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9163780626389737014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795c917ff508301498333d593620502d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 4
 --- !u!114 &5758035553477700178
 MonoBehaviour:
   m_ObjectHideFlags: 0

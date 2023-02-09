@@ -36,8 +36,7 @@ public class wavespawner : MonoBehaviour
         {
             Vector3 spawnPos = SpawnPositions[Random.Range(0, 5)].position;
             // Debug.Log(spawnPos);
-            int randomEnemy = Probability_Random_num();
-            Debug.Log(randomEnemy);
+            // Debug.Log(randomEnemy);
             _iswaveactive = false;
             for (int i = 0; i < enemycount; i++)
             {
@@ -45,6 +44,7 @@ public class wavespawner : MonoBehaviour
                 yield return new WaitForSeconds(wavetexttimer);
                 waveCountText.gameObject.SetActive(false);
 
+                int randomEnemy = Probability_Random_num();
                 GameObject enemyClone = Instantiate(enemies[randomEnemy], spawnPos, Quaternion.identity);
                 yield return new WaitForSeconds(spawnrate);
                 if (wavecount == 10)
@@ -64,7 +64,7 @@ public class wavespawner : MonoBehaviour
     public void EndEnemyWaves()
     {
         _stopspawning = true;
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
         foreach (GameObject enemy in enemies)
         {
             GameObject.Destroy(enemy);

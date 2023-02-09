@@ -33,6 +33,7 @@ public class projectile2 : MonoBehaviour
                 
                 if(Character_Health.instance.character_health_1 >= 0){
                     Character_Health.instance.character_health_1-=3f;
+                    Debug.Log(Character_Health.instance.character_health_1);
                     Destroy(gameObject);
                 }
                 Vector2 dir = obj.transform.position - transform.position;
@@ -61,21 +62,45 @@ public class projectile2 : MonoBehaviour
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, expRadius, 1);
         foreach (Collider2D obj in objects)
         {
-            if (obj.gameObject.tag == "Player 1" || obj.gameObject.tag == "Player 2")
+            // if (obj.gameObject.tag == "Player 1" || obj.gameObject.tag == "Player 2")
+            // {
+            //     if (obj.gameObject.GetComponent<player>().health >= 0)
+            //     {
+            //         obj.gameObject.GetComponent<player>().health -= 2f;
+            //         Destroy(gameObject);
+            //     }
+            // }
+            // Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+
+            // Vector3 deltaPos = rb.transform.position - transform.position;
+
+            // // Apply a force in t$$anonymous$$s direction with a magnitude of expForce.
+            // Vector3 force = deltaPos.normalized * expForce;
+            // rb.AddForce(force);
+            if (obj.gameObject.tag == "Player 1")
             {
-                if (obj.gameObject.GetComponent<player>().health >= 0)
-                {
-                    obj.gameObject.GetComponent<player>().health -= 2f;
+                print(obj.gameObject.tag);
+                
+                if(Character_Health.instance.character_health_1 >= 0){
+                    Character_Health.instance.character_health_1-=3f;
                     Destroy(gameObject);
                 }
+                Vector2 dir = obj.transform.position - transform.position;
+                obj.GetComponent<Rigidbody2D>().AddForce(dir * expForce, ForceMode2D.Impulse);
+                
             }
-            Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
-
-            Vector3 deltaPos = rb.transform.position - transform.position;
-
-            // Apply a force in t$$anonymous$$s direction with a magnitude of expForce.
-            Vector3 force = deltaPos.normalized * expForce;
-            rb.AddForce(force);
+            if (obj.gameObject.tag == "Player 2")
+            {
+                print(obj.gameObject.tag);
+                
+                if(Character_Health.instance.character_health_2 >= 0){
+                    Character_Health.instance.character_health_2-=3f;
+                    Destroy(gameObject);
+                }
+                
+                Vector2 dir = obj.transform.position - transform.position;
+                obj.GetComponent<Rigidbody2D>().AddForce(dir * expForce, ForceMode2D.Impulse);
+            }
         }
         if (detachChildren)
         { // detach the children before destroying if specified

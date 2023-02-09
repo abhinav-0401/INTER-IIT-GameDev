@@ -18,14 +18,23 @@ public class projectileinfect : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player 1")
         {
-            col.gameObject.GetComponent<player>().infection = true;
-            if (col.gameObject.GetComponent<player>().health >= 0)
-            {
-                col.gameObject.GetComponent<player>().health -= 1f;
+            col.gameObject.GetComponent<Infection>().infection = true;
+            // if ( >= 0)
+            // {
+            //     col.gameObject.GetComponent<player>().health -= 1f;
                 Destroy(gameObject);
-            }
+            // }
+        }
+        if (col.gameObject.tag == "Player 2")
+        {
+            col.gameObject.GetComponent<Infection>().infection = true;
+            // if ( >= 0)
+            // {
+            //     col.gameObject.GetComponent<player>().health -= 1f;
+                Destroy(gameObject);
+            // }
         }
     }
 }

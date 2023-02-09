@@ -11,7 +11,7 @@ public class Firing : MonoBehaviour
 
     [SerializeField] Animator anim;
     private void FixedUpdate() {
-        if(Input.GetMouseButton(0)){
+        if(Input.GetMouseButtonDown(0)){
             if(Time.time > Time_Stamp)
             Fire(bulletPrefab, shootPoint, fire_rate, bullet_Speed);
         }
